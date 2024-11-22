@@ -3,4 +3,17 @@
     <string name="app_name">Compose Multiplatform</string>
     <string name="search_hint">Search</string>
     <string name="close_hint">clear search query</string>
+    <string name="no_results">No results</string>
+    <string name="error_unknown">Something went wrong</string>
+    <string name="error_network">Network error</string>
+    <string name="error_service_unavailable">Service unavailable</string>
+    <string name="error_not_found">Not found</string>
+    <string name="error_request_timeout">Request timeout</string>
+    <string name="error_connection_timeout">Connection timeout</string>
+    <string name="error_too_many_requests">Too many requests</string>
+    <string name="error_serialization">Serialization error</string>
+    <string name="error_internal_server">Internal server error</string>
+    <string name="error_unauthorized">Unauthorized</string>
+    <string name="error_database">Database error</string>
+
 </resources>
