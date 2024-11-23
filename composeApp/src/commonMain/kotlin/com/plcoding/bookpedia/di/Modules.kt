@@ -9,6 +9,7 @@ import org.koin.dsl.bind
 import org.koin.dsl.module
 import com.plcoding.bookpedia.book.data.DefaultBookRepository
 import com.plcoding.bookpedia.book.presentation.book_list.BookListViewModel
+import com.plcoding.bookpedia.book.presentation.SelectedBookViewModel
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.viewModelOf
 
@@ -22,4 +23,6 @@ val sharedModule = module {
     singleOf(::DefaultBookRepository).bind<BookRepository>()
 
     viewModelOf(::BookListViewModel)
+    viewModelOf(::SelectedBookViewModel)
+
 }
