@@ -24,7 +24,7 @@ import kotlinx.coroutines.launch
 class BookListViewModel(
     private val bookRepository: BookRepository
 ) : ViewModel() {
-    private val cachedBooks = mutableListOf<Book>()
+    private var cachedBooks = emptyList<Book>()
     private var searchJob: Job? = null
     private val _state = MutableStateFlow(BookListState())
     val state = _state
@@ -92,8 +92,7 @@ class BookListViewModel(
             bookRepository
                 .searchBooks(query)
                 .onSuccess { list ->
-                    cachedBooks.clear()
-                    cachedBooks.addAll(list)
+                    cachedBooks = list
                     _state.update { oldState ->
                         oldState.copy(
                             isLoading = false,
