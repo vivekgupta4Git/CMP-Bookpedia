@@ -20,6 +20,7 @@ fun DataError.toUiText(): UiText {
         DataError.Remote.SERIALIZATION_ERROR ->  Res.string.error_serialization
         DataError.Remote.INTERNAL_SERVER_ERROR ->  Res.string.error_internal_server
         DataError.Local.DATABASE_ERROR ->  Res.string.error_database
+        DataError.Local.NOT_FOUND -> TODO()
     }
     return UiText.StringResourceId(stringRes)
 }

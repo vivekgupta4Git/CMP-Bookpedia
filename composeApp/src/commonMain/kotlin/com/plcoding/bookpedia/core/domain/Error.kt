@@ -14,6 +14,7 @@ sealed interface DataError : Error{
     }
     enum class Local : DataError{
         DATABASE_ERROR,
+        NOT_FOUND,
         UNKNOWN
     }
 }

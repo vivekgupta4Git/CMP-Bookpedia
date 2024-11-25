@@ -1,5 +1,6 @@
 package com.plcoding.bookpedia.book.mappers
 
+import com.plcoding.bookpedia.book.data.database.BookEntity
 import com.plcoding.bookpedia.book.data.dto.SearchResponseDto
 import com.plcoding.bookpedia.book.data.dto.SearchedBookDto
 import com.plcoding.bookpedia.book.domain.Book
@@ -32,3 +33,36 @@ fun List<SearchedBookDto>.toBooks(): List<Book> = map {
 
 fun Result<SearchResponseDto, DataError.Remote>.toDomainBookList() =
     map { it.results.toBooks() }
+
+
+fun Book.toBookEntity() : BookEntity{
+    return BookEntity(
+        id = id,
+        title = title,
+        authors = authors,
+        description = description,
+        languages = languages,
+        firstPublishYear = firstPublishYear,
+        averageRating = averageRating,
+        ratingCount = ratingCount,
+        numPages = numPages,
+        numEditions = numEditions,
+        imageUrl = imageUrl,
+    )
+}
+
+fun BookEntity.toBook() : Book{
+    return Book(
+        id = id,
+        title = title,
+        authors = authors,
+        description = description,
+        languages = languages,
+        firstPublishYear = firstPublishYear,
+        averageRating = averageRating,
+        ratingCount = ratingCount,
+        numPages = numPages,
+        numEditions = numEditions,
+        imageUrl = imageUrl
+    )
+}
